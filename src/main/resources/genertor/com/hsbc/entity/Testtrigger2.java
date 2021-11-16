@@ -1,10 +1,9 @@
 package com.hsbc.entity;
 
-import java.math.BigDecimal;
-
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -18,20 +17,26 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author stephen
- * @since 2021-11-14
+ * @since 2021-10-17
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("HOST")
-@ApiModel(value="Host对象", description="")
-public class Host extends Model<Host> {
+@TableName("TESTTRIGGER2")
+@ApiModel(value="Testtrigger2对象", description="")
+public class Testtrigger2 extends Model<Testtrigger2> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId
-    private BigDecimal id;
+    @TableId(value = "ID", type = IdType.NONE)
+    private String id;
 
-    @TableField("NAME")
-    private String name;
+    @TableField("NUMS")
+    private String nums;
+
+
+    @Override
+    protected Serializable pkVal() {
+        return this.id;
+    }
 
 }

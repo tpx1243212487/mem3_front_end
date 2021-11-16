@@ -10,6 +10,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @SpringBootApplication
 @SpringBootConfiguration
 @MapperScan("com.hsbc.mapper")
+//@MapperScan("com.hsbc")
 @EnableAspectJAutoProxy(exposeProxy =  true)
 //@EnableAutoConfiguration
 public class Mem3Application {
